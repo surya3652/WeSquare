@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ content }}</h1>
+    <h1>{{ bind_text }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
       check out the
@@ -8,6 +8,9 @@
         >vue-cli documentation</a
       >.
     </p>
+    <li>
+      <input v-model="bind_text" type="text" />
+    </li>
   </div>
 </template>
 
@@ -15,7 +18,12 @@
 export default {
   name: "HelloWorld",
   props: {
-    content: String,
+    msg: String,
+  },
+  data() {
+    return {
+      bind_text: this.msg,
+    };
   },
 };
 </script>

@@ -5,6 +5,7 @@
       <li v-for="(x, index) in plugins" :key="index">
         <a :href="x.href" :target="x.target" :rel="x.rel">{{ x.content }}</a>
       </li>
+      <br />
     </ul>
   </div>
 </template>
@@ -12,18 +13,19 @@
 <script>
 import getPlugins from "@/services/plugins";
 export default {
-
   name: "PluginsComponent",
   data() {
     return {
       plugins: getPlugins(),
     };
   },
-  
 };
 </script>
 
 <style scoped>
+input {
+  margin: 10px;
+}
 h3 {
   margin: 40px 0 0;
 }
