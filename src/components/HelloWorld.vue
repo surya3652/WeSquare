@@ -1,28 +1,31 @@
 <template>
   <div class="hello">
-    <h1>{{ bind_text }}</h1>
+    <InputComponent @update:message="message = $event"/>
+    <h1>{{ message }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
       check out the
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener"
         >vue-cli documentation</a
       >.
+      
     </p>
-    <li>
-      <input v-model="bind_text" type="text" />
-    </li>
   </div>
 </template>
 
 <script>
+import InputComponent from './InputComponent.vue';
 export default {
   name: "HelloWorld",
   props: {
     msg: String,
   },
+  components:{
+    InputComponent,
+  },
   data() {
     return {
-      bind_text: this.msg,
+      message:'',
     };
   },
 };
