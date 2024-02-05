@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
-    <InputComponent v-on:modify="handleChange" />
-    <h1>{{ message }}</h1>
+    <InputComponent v-bind:msg="message" />
+    <h1>Parent : {{ message }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
       check out the
@@ -16,9 +16,9 @@
 import InputComponent from "./InputComponent.vue";
 export default {
   name: "HelloWorld",
-  props: {
-    msg: String,
-  },
+  // props: {
+  //   msg: String,
+  // },
   components: {
     InputComponent,
   },
@@ -28,11 +28,8 @@ export default {
     };
   },
   methods: {
-    handleChange(e) {
-      const { message } = e.target.value;
+    test(message) {
       this.message = message;
-      console.log(e.target.value);
-      console.log(message)
     },
   },
 };

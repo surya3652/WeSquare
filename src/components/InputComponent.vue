@@ -1,12 +1,22 @@
 <template>
   <div class="hello">
-    <input type="text" v-on:input="(e) => this.$emit('modify',e)"/>
+    Child : <input type="text" v-model="message" v-on:keyup="trigger()" />
   </div>
 </template>
 
 <script>
 export default {
   name: "InputComponent",
+  data() {
+    return {
+      message: "",
+    };
+  },
+  methods: {
+    trigger() {
+      this.$parent.test(this.message);
+    },
+  },
 };
 </script>
 
