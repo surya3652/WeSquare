@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     handleChange(e) {
-      const { message } = e.target.value;
+      const message = e.target.value;
       this.message = message;
       console.log(e.target.value);
       console.log(message)
