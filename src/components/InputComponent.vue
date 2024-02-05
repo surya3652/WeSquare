@@ -1,20 +1,20 @@
 <template>
   <div class="hello">
-    <input type="text" v-model="message" />
+    <input type="text" v-model="message" v-on:keyup="test()" />
   </div>
 </template>
 
 <script>
 export default {
   name: "InputComponent",
-  data(){
-    return{
-      message : '',
-    }
+  data() {
+    return {
+      message: "",
+    };
   },
-  watch: {
-    message(newValue) {
-      this.$parent.message = newValue;
+  methods: {
+    test() {
+      this.$parent.message = this.message;
     },
   },
 };
