@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <!-- Used Emitters -->
     <InputComponent @update:message="message = $event"/>
     <h1>{{ message }}</h1>
     <p>
