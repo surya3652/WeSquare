@@ -31,7 +31,8 @@ export default {
     handleChange(e) {
       const { message } = e.target.value;
       this.message = message;
-      console.log(message);
+      console.log(e.target.value);
+      console.log(message)
     },
   },
 };
