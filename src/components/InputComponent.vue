@@ -1,17 +1,12 @@
 <template>
   <div class="hello">
-    <input v-model="child" @input="$emit('update:message',child)" type="text" />
+    <input type="text" v-on:input="(e) => this.$emit('modify',e)"/>
   </div>
 </template>
 
 <script>
 export default {
   name: "InputComponent",
-  data() {
-    return {
-      child:''
-    };
-  },
 };
 </script>
 

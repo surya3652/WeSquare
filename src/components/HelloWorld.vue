@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <InputComponent @update:message="message = $event"/>
+    <InputComponent v-on:modify="handleChange" />
     <h1>{{ message }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
@@ -8,25 +8,31 @@
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener"
         >vue-cli documentation</a
       >.
-      
     </p>
   </div>
 </template>
 
 <script>
-import InputComponent from './InputComponent.vue';
+import InputComponent from "./InputComponent.vue";
 export default {
   name: "HelloWorld",
   props: {
     msg: String,
   },
-  components:{
+  components: {
     InputComponent,
   },
   data() {
     return {
-      message:'',
+      message: "",
     };
+  },
+  methods: {
+    handleChange(e) {
+      const { message } = e.target.value;
+      this.message = message;
+      console.log(message);
+    },
   },
 };
 </script>
