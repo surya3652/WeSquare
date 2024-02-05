@@ -7,6 +7,9 @@
 <script>
 export default {
   name: "InputComponent",
+  props:{
+    fun : Function,
+  },
   data() {
     return {
       message: "",
@@ -14,7 +17,7 @@ export default {
   },
   methods: {
     trigger() {
-      this.$parent.test(this.message);
+      this.fun(this.message);
     },
   },
 };
