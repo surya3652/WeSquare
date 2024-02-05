@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <InputComponent v-on:modify="handleChange" />
+    <InputComponent v-model="message" />
     <h1>{{ message }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
@@ -24,16 +24,8 @@ export default {
   },
   data() {
     return {
-      message: "",
+      message: '',
     };
-  },
-  methods: {
-    handleChange(e) {
-      const { message } = e.target.value;
-      this.message = message;
-      console.log(e.target.value);
-      console.log(message)
-    },
   },
 };
 </script>

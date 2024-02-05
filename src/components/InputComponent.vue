@@ -1,12 +1,22 @@
 <template>
   <div class="hello">
-    <input type="text" v-on:input="(e) => this.$emit('modify',e)"/>
+    <input type="text" v-model="message" />
   </div>
 </template>
 
 <script>
 export default {
   name: "InputComponent",
+  data(){
+    return{
+      message : '',
+    }
+  },
+  watch: {
+    message(newValue) {
+      this.$parent.message = newValue;
+    },
+  },
 };
 </script>
 
